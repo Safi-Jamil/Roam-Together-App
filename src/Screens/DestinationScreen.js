@@ -134,7 +134,7 @@ const DestinationScreen = ({ navigation }) => {
             currentLocationWithinRadius={2000}
             enablePoweredByContainer={false}
             minLength={2}
-            autoFocus={false}
+            autoFocus={true}
             ref={textInput2}
             styles={autoComplete}
             query={{

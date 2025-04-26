@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
 import { LocationProviders } from './src/Context/Context';
+import StackNavigator from './src/Navigations/StackNavigators'; // correct path
 import 'react-native-get-random-values';
 
 // Import all screens
@@ -22,21 +22,6 @@ import OfferingCarpool from './src/Screens/OfferingCarpool';
 import ReservingCarpool from './src/Screens/ReservingCarpool';
 
 const Stack = createStackNavigator();
-const Drawer = createDrawerNavigator();
-
-// Drawer Navigator for main app screens
-function MainDrawer() {
-  return (
-    <Drawer.Navigator initialRouteName="HomeScreen">
-      <Drawer.Screen name="HomeScreen" component={HomeScreen} />
-      <Drawer.Screen name="RequestScreen" component={RequestScreen} />
-      <Drawer.Screen name="DestinationScreen" component={DestinationScreen} />
-      <Drawer.Screen name="DriverScreen" component={DriverScreen} />
-      <Drawer.Screen name="OfferingCarpool" component={OfferingCarpool} />
-      <Drawer.Screen name="ReservingCarpool" component={ReservingCarpool} />
-    </Drawer.Navigator>
-  );
-}
 
 export default function App() {
   return (
@@ -46,7 +31,6 @@ export default function App() {
           initialRouteName="SplashScreen"
           screenOptions={{ headerShown: false }}
         >
-          {/* Auth and Setup Screens */}
           <Stack.Screen name="SplashScreen" component={SplashScreen} />
           <Stack.Screen name="ProfileSetUpScreen" component={ProfileSetUpScreen} />
           <Stack.Screen name="LoginAsDriver" component={LoginAsDriver} />
@@ -55,9 +39,12 @@ export default function App() {
           <Stack.Screen name="SignUpStep1" component={SignUpStep1} />
           <Stack.Screen name="SignUpStep2" component={SignUpStep2} />
           <Stack.Screen name="SignUpStep3" component={SignUpStep3} />
-
-          {/* Main App Drawer - this should be navigated to once the user is logged in */}
-          <Stack.Screen name="MainDrawer" component={MainDrawer} />
+          <Stack.Screen name="HomeScreen" component={HomeScreen} />
+          <Stack.Screen name="RequestScreen" component={RequestScreen} />
+          <Stack.Screen name="DestinationScreen" component={DestinationScreen} />
+          <Stack.Screen name="DriverScreen" component={DriverScreen} />
+          <Stack.Screen name="OfferingCarpool" component={OfferingCarpool} />
+          <Stack.Screen name="ReservingCarpool" component={ReservingCarpool} />
         </Stack.Navigator>
       </NavigationContainer>
     </LocationProviders>
