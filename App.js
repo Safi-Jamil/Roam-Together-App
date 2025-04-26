@@ -20,6 +20,7 @@ import DestinationScreen from './src/Screens/DestinationScreen';
 import DriverScreen from './src/Screens/DriverScreen';
 import OfferingCarpool from './src/Screens/OfferingCarpool';
 import ReservingCarpool from './src/Screens/ReservingCarpool';
+import OfferedCarpool from './src/Screens/OfferedCarpool';
 
 const Stack = createStackNavigator();
 
@@ -45,6 +46,7 @@ export default function App() {
           <Stack.Screen name="DriverScreen" component={DriverScreen} />
           <Stack.Screen name="OfferingCarpool" component={OfferingCarpool} />
           <Stack.Screen name="ReservingCarpool" component={ReservingCarpool} />
+          <Stack.Screen name="OfferedCarpool" component={OfferedCarpool} />
         </Stack.Navigator>
       </NavigationContainer>
     </LocationProviders>
